@@ -87,19 +87,19 @@ def konwertujDataFrame(df, config):
     # DELKARACJA PLIKU I NAMESPACE
     xml.append('<RDF ')
     for namespace in namespaces.keys():
-        xml.append('{} = {}\n'.format(namespace, namespaces[namespace]))
+        xml.append('{} = "{}"\n'.format(namespace, namespaces[namespace]))
     xml.append('>\n')
     
     # iteruje po obiektach w data frame
     for index, row in df.iterrows():
         # rozpoczecie ABOUT
         about_keys = about.keys()
-        namespace = namespaces[about[about_keys[0]][0]][:-1] # namespace
+        namespace = namespaces[about[about_keys[0]][0]] # namespace
         wartosc = row[about_keys[0]]
         typ = about[about_keys[0]][1]
-        xml.append(u'<Description rdf:about={}{}">\n'.format(
+        xml.append(u'<Description rdf:about="{}{}">\n'.format(
                     namespace, wartosc)) # wartosc z df
-        xml.append(u'<rdf:type rdf:resource={}{}"/>\n'.format(
+        xml.append(u'<rdf:type rdf:resource="{}{}"/>\n'.format(
                     namespace, typ))
         
         # LITERAL jesli wystepuje
@@ -117,10 +117,10 @@ def konwertujDataFrame(df, config):
         if len(ref_keys) > 0:
             for obj in ref_keys:
                 ns = reference[obj][0]
-                nsObj = namespaces[reference[obj][2]][:-1]
+                nsObj = namespaces[reference[obj][2]]
                 predykat = reference[obj][1]
                 
-                xml.append(u'<{}:{} rdf:resource={}{}"/>\n'.format(
+                xml.append(u'<{}:{} rdf:resource="{}{}"/>\n'.format(
                 ns, predykat, nsObj, row[obj]))
         
         # GEOM jesli wystepuje
