@@ -20,23 +20,23 @@ import json
 import codecs
 import common as cm
 import bebechy as bb
-import konfiguracjaCSV as cfg
+import konfiguracjaSHP as cfg
 
 for data2load in cfg.data:
 
-    # load CSV
+    # load SHP
     try:
-        loadPath = 'src/csv/{}'.format(data2load[0])
-        informacje = pd.read_csv(loadPath, delimiter = ';', encoding = "utf8")
+        loadPath = 'src/shp/{}'.format(data2load[0])
+        informacje = cm.load_shp_to_dataframe(loadPath, 'windows-1250')
         print '\n\n###########  {}  ############\n'.format(loadPath)
-        print 'Ladowanie CSV >> OK!'
+        print 'Ladowanie SHP >> OK!'
     except:
-        print 'Nie udalo sie zaladowac pliku CSV: {}'.format(loadPath)
+        print 'Nie udalo sie zaladowac pliku SHP: {}'.format(loadPath)
         break
     
     # load JSON -schema
     try:
-        loadPath = 'src/csv/{}'.format(data2load[1])
+        loadPath = 'src/shp/{}'.format(data2load[1])
         jason = json.loads(open(loadPath, 'r').read())
         informacje_schemat = jason['CONFIG']
         print 'Ladowanie JSON >> OK!\n'

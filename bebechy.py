@@ -92,6 +92,12 @@ def konwertujDataFrame(df, config):
     
     # iteruje po obiektach w data frame
     for index, row in df.iterrows():
+        # test czy posiada geometrie
+        if len(geom.keys()) > 0:
+            spatial = True
+        else:
+            spatial = False
+            
         # rozpoczecie ABOUT
         about_keys = about.keys()
         namespace = namespaces[about[about_keys[0]][0]] # namespace
@@ -124,10 +130,29 @@ def konwertujDataFrame(df, config):
                 ns, predykat, nsObj, row[obj]))
         
         # GEOM jesli wystepuje
+        if spatial == True:
+            geom_keys = geom.keys()
+            for obj in geom_keys:
+                ns = geom[obj][1]
                 
+                xml.append(u'<{}:hasGeometry rdf:resource="{}geom_{}"/>\n'.format(ns, namespace, wartosc))
         
         # konczenie ABOUT
         xml.append(u'</Description>\n\n')
+        
+        # obiekt o geometrii
+        if spatial == True:
+            geom_keys = geom.keys()
+            sf_typ = geom[geom_keys[0]][2]
+            ns = geom[geom_keys[0]][0]
+            wkt = row[geom_keys[0]]
+            
+            xml.append(u'<Description rdf:about="{}geom_{}">\n'.format(
+                        namespace, wartosc))
+            xml.append(u'<{}:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">{}</{}:asWKT>'.format(
+                        ns, wkt, ns))
+            xml.append(u'<rdf:type rdf:resource="http://www.opengis.net/ont/sf#{}"/>\n'.format(sf_typ))
+            xml.append(u'</Description>\n\n')
     
     # znacznik zamykajacy
     xml.append('</RDF>')
