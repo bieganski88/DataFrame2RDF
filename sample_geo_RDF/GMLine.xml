@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:ns1="http://www.opengis.net/ont/geosparql#"
+xmlns:ns2="http://www.wizipisi.pl/geodata#"
+>
+  <Description rdf:about="http://www.wizipisi.pl/geodata#droga_484a49c4-142d-4af4-b741-3e6cb13f872e">
+    <ns1:hasGeometry rdf:resource="http://www.wizipisi.pl/geodata#%23geometry2"/>
+  </Description>
+  
+  <Description rdf:about="http://www.wizipisi.pl/geodata#%23geometry2">
+    <ns1:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">LINESTRING( 528377.0000000000 434743.0000000000, 528191.0000000000 434942.0000000000, 527967.0000000000 434892.0000000000, 527765.0000000000 434887.0000000000, 527511.0000000000 434835.0000000000)</ns1:asWKT>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/sf#LineString"/>
+  </Description>
+  
+  <Description rdf:about="http://www.wizipisi.pl/geodata#droga_484a49c4-142d-4af4-b741-3e6cb13f872e">
+    <ns2:lokalnyId>484a49c4-142d-4af4-b741-3e6cb13f872e</ns2:lokalnyId>
+	<ns2:nazwa>Bialowieska</ns2:nazwa>
+	<ns2:nawierzchnia>podly piach</ns2:nawierzchnia>
+    <rdf:type rdf:resource="http://www.wizipisi.pl/geodata#droga"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+  </Description>
+  
+</RDF>

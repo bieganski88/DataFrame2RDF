@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		
+  <Description rdf:about="http://www.wizipisi.pl/geodata#budynek_8932840a-b794-46f9-bf36-ca7833af84cb">
+    <rdf:type rdf:resource="http://www.wizipisi.pl/geodata#budynek"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+	<ns1:hasGeometry xmlns:ns1="http://www.opengis.net/ont/geosparql#" rdf:resource="http://www.wizipisi.pl/geodata#geometry3"/>
+  </Description>
+  
+  <Description rdf:about="http://www.wizipisi.pl/geodata#geometry3">
+    <ns1:asWKT xmlns:ns1="http://www.opengis.net/ont/geosparql#" rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POLYGON((527866.7172681600 434915.5903232810, 527764.9511256710 434913.8711478830, 527764.9193265050 434915.8834757000, 527765.6503003030 434915.8986298230, 527765.1382136930 434946.1945420690, 527763.1788308490 435061.2633532380, 527762.4478781780 435061.2481994000, 527762.3880873090 435064.5835110210, 527854.8691823390 435066.1622774210, 527876.4947883200 435066.5267122430, 527879.0709161560 434915.3141025930, 527866.7268136660 434915.1122675500, 527866.7172681600 434915.5903232810))</ns1:asWKT>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/sf#Polygon"/>
+  </Description>
+  
+</RDF>

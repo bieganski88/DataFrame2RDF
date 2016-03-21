@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <Description rdf:about="http://geoportal.gov.pl/PZGIK/dane/PL.ZIPIN.3851.EMUiA/30000000000029878619">
+    <ns1:aglatlon xmlns:ns1="http://www.wizipisi.pl/geodata#" rdf:datatype="http://franz.com/ns/allegrograph/5.0/geo/nd#_lat_la_-9.+1_+9.+1_+1.-4_+1.-3_lon_lo_-1.8+2_+1.8+2_+1.-4">&amp;lat=527821.149999684&amp;lon=434990.189978168</ns1:aglatlon>
+    <ns2:hasGeometry xmlns:ns2="http://www.opengis.net/ont/geosparql#" rdf:resource="http://www.wizipisi.pl/geodata#%23geometry1"/>
+  </Description>
+  
+  <Description rdf:about="http://www.wizipisi.pl/geodata#%23geometry1">
+    <ns2:asWKT xmlns:ns2="http://www.opengis.net/ont/geosparql#" rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT(527821.1499996840 434990.1899781680)</ns2:asWKT>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/sf#Point"/>
+  </Description>
+  
+  <Description rdf:about="http://geoportal.gov.pl/PZGIK/dane/PL.ZIPIN.3851.EMUiA/30000000000029878619">
+    <ns3:long xmlns:ns3="http://www.w3.org/2003/01/geo/wgs84_pos#">4.34990189978168E5</ns3:long>
+    <ns3:lat xmlns:ns3="http://www.w3.org/2003/01/geo/wgs84_pos#">5.27821149999684E5</ns3:lat>
+    <ns1:numerPorza xmlns:ns1="http://www.wizipisi.pl/geodata#">15</ns1:numerPorza>
+    <ns1:identifier xmlns:ns1="http://www.wizipisi.pl/geodata#">http://geoportal.gov.pl/PZGIK/dane/PL.ZIPIN.3851.EMUiA/30000000000029878619</ns1:identifier>
+    <rdf:type rdf:resource="http://www.wizipisi.pl/geodata#punkt_adresowy"/>
+    <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+  </Description>
+</RDF>
