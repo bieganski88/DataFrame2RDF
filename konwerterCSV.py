@@ -2,7 +2,7 @@
 """
 Created on Fri Mar 18 08:00:41 2016
 
-@author: Przemyslaw Bieganski, WIZIPISI
+@author: Przemyslaw Bieganski [bieg4n@gmail.com, przemyslaw.bieganski.88@gmail.com]
 
 Skrypt ma na celu konwersje danych do formatu RDF.
 W celu prawidlowej transformacji do kazdego pliku musi byc dolaczony
@@ -56,7 +56,7 @@ for data2load in cfg.data:
     
     
     # zapis do pliku
-    outputName = 'dest/{}.xml'.format(data2load[0].replace('.csv', ''))
+    outputName = 'dest/{}.rdf'.format(data2load[0].replace('.csv', ''))
     print '\nZapis RDF/XML w lokalizacji:{}'.format(outputName)
     try:
         text_file = codecs.open(outputName, "w", "utf-8")

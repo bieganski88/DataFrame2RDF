@@ -2,12 +2,13 @@
 """
 Created on Fri Mar 18 09:16:23 2016
 
-@author: wizipisi-007
+@author: Przemyslaw Bieganski [bieg4n@gmail.com, przemyslaw.bieganski.88@gmail.com]
 """
 # wczytywanie modulow - zewnetrzne moduly
 import pandas as pd
 import fiona
 import geopandas
+import random
 
 # ladowanie dancyh
 def load_excel(path, sheet):
@@ -45,3 +46,22 @@ def load_shp_to_dataframe(sciezka, kodowanie):
     plik = plik[column_order]
     
     return plik
+
+
+def generuj_date(start, koniec):
+    '''Generuje pelna date zgodna z ISO dla zadanego przedzialu
+    czasowego. Z dokladnoscia do dnia.
+    start - rok poczatkowy,
+    koniec - rok koncowy.
+    '''
+    
+    rok = random.choice(range(start+1, koniec+1))
+    
+    miesiac = random.choice(range(1,13))
+    if miesiac == 2:
+        dzien = random.choice(range(1,29))
+    else:
+        dzien = random.choice(range(1,32))
+    kompletna_data = '{}-{}-{}T00:00:00+01:00'.format(rok, str(miesiac).zfill(2), str(dzien).zfill(2))
+    
+    return kompletna_data

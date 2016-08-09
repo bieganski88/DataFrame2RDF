@@ -2,7 +2,7 @@
 """
 Created on Fri Mar 18 10:18:15 2016
 
-@author: wizipisi-007
+@author: Przemyslaw Bieganski [bieg4n@gmail.com, przemyslaw.bieganski.88@gmail.com]
 """
 
 def check_schema(df, config):
@@ -143,13 +143,14 @@ def konwertujDataFrame(df, config):
         # obiekt o geometrii
         if spatial == True:
             geom_keys = geom.keys()
-            sf_typ = geom[geom_keys[0]][2]
-            ns = geom[geom_keys[0]][0]
+            #sf_typ = geom[geom_keys[0]][2]
+            ns = geom[geom_keys[0]][1]
             wkt = row[geom_keys[0]]
+            sf_typ = wkt.geom_type
             
             xml.append(u'<Description rdf:about="{}geom_{}">\n'.format(
                         namespace, wartosc))
-            xml.append(u'<{}:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">{}</{}:asWKT>'.format(
+            xml.append(u'<{}:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">{}</{}:asWKT>\n'.format(
                         ns, wkt, ns))
             xml.append(u'<rdf:type rdf:resource="http://www.opengis.net/ont/sf#{}"/>\n'.format(sf_typ))
             xml.append(u'</Description>\n\n')

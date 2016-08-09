@@ -1,0 +1,1 @@
+Folder na przekonwertowane dane w formacie RDF.
